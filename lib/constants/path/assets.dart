@@ -7,5 +7,5 @@ class svgPath {
   var classRoom = 'assets/svgs/classroom.svg';
   var subjects = 'assets/svgs/subject 1.svg';
   var students = 'assets/svgs/students.svg';
-  var student = 'assets/svgs/students1.svg';
+  var student = 'assets/svgs/student.svg';
 }

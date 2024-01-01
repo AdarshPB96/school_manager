@@ -5,6 +5,9 @@ import 'package:school_manager/constants/size_color/size.dart';
 import 'package:school_manager/constants/widgets/clipper_widget.dart';
 import 'package:school_manager/constants/widgets/common_extracted.dart';
 import 'package:school_manager/constants/widgets/home_constants.dart';
+import 'package:school_manager/features/screens/classroom/classrooms_screen.dart';
+import 'package:school_manager/features/screens/students/students_screen.dart';
+import 'package:school_manager/features/screens/subjects/subject_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,32 +43,47 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  children: [
-                    SizedBox(
-                        height: h * 0.14,
-                        width: w * 0.3,
-                        child: svgImage(svgs.classRoom, fill: true)),
-                    tSized20,
-                    const ConstText(
-                      text: 'classrooms',
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ClassRoomsScreen(),
+                        ));
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height: h * 0.14,
+                          width: w * 0.3,
+                          child: svgImage(svgs.classRoom, fill: true)),
+                      tSized20,
+                      const ConstText(
+                        text: 'classrooms',
+                      )
+                    ],
+                  ),
                 ),
-                Column(
-                  children: [
-                    SizedBox(
-                        height: h * 0.14,
-                        width: w * 0.3,
-                        child: Image.asset(
-                          assets.students,
-                          fit: BoxFit.fill,
-                        )),
-                    tSized20,
-                    const ConstText(
-                      text: 'students',
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StudentsScreen(),
+                        ));
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height: h * 0.14,
+                          width: w * 0.3,
+                          child: svgImage(svgs.student, fill: true)),
+                      tSized20,
+                      const ConstText(
+                        text: 'students',
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -73,16 +91,25 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  children: [
-                    SizedBox(
-                        height: h * 0.14,
-                        width: w * 0.3,
-                        child: svgImage(svgs.subjects, fill: true)),
-                    const ConstText(
-                      text: 'subjects',
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SubjectScreen(),
+                        ));
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height: h * 0.14,
+                          width: w * 0.3,
+                          child: svgImage(svgs.subjects, fill: true)),
+                      const ConstText(
+                        text: 'subjects',
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: h * 0.14,
