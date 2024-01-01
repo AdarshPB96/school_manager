@@ -6,6 +6,7 @@ import 'package:school_manager/features/providers/students_provider.dart';
 import 'package:school_manager/features/providers/subjects_provider.dart';
 import 'package:school_manager/features/screens/classroom/classrooms_screen.dart';
 import 'package:school_manager/features/screens/home/home_screen.dart';
+import 'package:school_manager/features/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const HomeScreen()),
+          home: const SplahScreen()),
     );
   }
 }
